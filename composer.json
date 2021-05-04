@@ -1,0 +1,37 @@
+{
+    "name": "co-foundry/omnipay-repay",
+    "type": "library",
+    "description": "REPAY driver for the Omnipay payment processing library",
+    "keywords": [
+        "gateway",
+        "merchant",
+        "omnipay",
+        "pay",
+        "payment",
+        "repay"
+    ],
+    "homepage": "https://github.com/Co-Foundry/ominipay-repay",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Greg Gunner",
+            "email": "greg@co-foundry.co.za"
+        }
+    ],
+    "autoload": {
+        "psr-4": { "Omnipay\\Repay\\" : "src/" }
+    },
+    "require": {
+        "omnipay/common": "~3.0"
+    },
+    "require-dev": {
+        "omnipay/tests": "~3.0",
+        "squizlabs/php_codesniffer": "~3.0"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "3.0.x-dev"
+        }
+    },
+    "prefer-stable": true
+}

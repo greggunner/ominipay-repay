@@ -1,0 +1,10 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+Date: Sat, 13 May 2017 00:20:08 GMT
+requestId: 3c644d2e-082c-430e-a209-fce4c253e49f
+Server: Windows NT 3.x
+X-Content-Type-Options: nosniff
+Content-Length: 836
+Connection: Close
+
+{"links":[{"href":"https://api.staging.repayonline.com/rgapi/v1.0/transactions/card/667875","rel":"self","method":"GET"},{"href":"https://api.staging.repayonline.com/rgapi/v1.0/transactions/card/667875/emailreceipt","rel":"emailReceipt","method":"POST"},{"href":"https://api.staging.repayonline.com/rgapi/v1.0/transactions/card/667875/void","rel":"void","method":"POST"},{"href":"https://api.staging.repayonline.com/rgapi/v1.0/transactions/card/667875/rebill","rel":"rebill","method":"POST"},{"href":"https://api.staging.repayonline.com/rgapi/v1.0/transactions/card/667875/reversal","rel":"reverse","method":"POST"}],"entry_method":"Keyed","requested_auth_amount":18.36,"auth_amount":18.36,"total_amount":18.36,"tip_amount":0,"convenience_amount":4.95,"custom_fields":[],"itr_card_retries":[],"manual":true,"transaction_id":667875,"merchant_id":286,"merchant_name":"Logical Elephant Test","customer_id":"4561","invoice_id":"123","date":"2019-03-11T18:43:40.455869Z","payment_type_id":"VISA","last4":"1111","name_on_card":"John Doe","trans_type_id":"Sale","response_message":{"description":null,"details":null},"approval_code":"TAS683","user_name":"logi3287                        ","register_number":null,"trx_status":"Open","batch_number":null,"batch_id":null,"result":"12","result_text":"Declined","result_details":{"authorization_reversed":false,"delayed_in_reporting":false,"card_info":{"country":"US","bank_name":"JPMORGAN CHASE BANK N.A.","brand":"VISA","category":null,"type":""}},"voided":false,"reversed":false,"host_ref_num":"000000000036661","avs_response":"Street address, 5-digit Z","avs_response_code":"N","cv_response":null,"cv_response_code":"","settle_flag":"0","po_num":null,"card_token":null,"orig_transaction_id":null,"processor_profile_key":null,"processor_profile_description":null,"retry_count":0,"currency_id":null}
