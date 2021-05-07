@@ -1,6 +1,8 @@
 <?php
-namespace Omnipay\Repay\Message;
+namespace Omnipay\Repay\Message\Hosted;
 
+
+use Omnipay\Repay\Message\Response;
 
 abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
 {
@@ -43,8 +45,7 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
             $this->getEndpoint(),
             [
                 'Content-Type' => 'application/json',
-                'rg-api-user: ' . $this->getUsername(),
-                'rg-api-secure-token: ' . $this->getSecuretoken()
+                'Authorization' => 'apptoken ' . $this->getSecuretoken()
             ],
             json_encode($data)
         );
@@ -80,16 +81,6 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
         return $this->setParameter('hostname', $value);
     }
 
-    public function getUsername()
-    {
-        return $this->getParameter('username');
-    }
-
-    public function setUsername($value)
-    {
-        return $this->setParameter('username', $value);
-    }
-
     public function getSecuretoken()
     {
         return $this->getParameter('securetoken');
@@ -98,6 +89,16 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
     public function setSecuretoken($value)
     {
         return $this->setParameter('securetoken', $value);
+    }
+
+    public function setCheckoutFormId($value)
+    {
+        $this->setParameter('checkoutFormId', $value);
+    }
+
+    public function getCheckoutFormId()
+    {
+        $this->getParameter('checkoutFormId');
     }
 
 }

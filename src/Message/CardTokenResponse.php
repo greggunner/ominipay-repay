@@ -2,25 +2,19 @@
 
 namespace Omnipay\Repay\Message;
 
-use Guzzle\Http\Message\Response as HttpResponse;
-use Omnipay\Common\Message\AbstractResponse;
 use Omnipay\Common\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
 /**
  * REPAY Purchase Request
  */
-class Response extends AbstractResponse
+class CardTokenResponse extends Response
 {
+
     /**
      * @var HttpResponse  HTTP response object
      */
     public $response;
-
-    /**
-     * @var string  Payment status that determines success
-     */
-    protected $resultOk = '0';
 
     /**
      * Constructor
@@ -45,34 +39,40 @@ class Response extends AbstractResponse
     public function isSuccessful()
     {
         $code = $this->response->getStatusCode();
-        if ($code !== 200) {
-            return false;
-        }
-
-        if (isset($this->data['result']) && $this->data['result'] == $this->resultOk) {
+        if ($code == 200) {
             return true;
         }
-
         return false;
     }
 
+
     /**
      * @return string|null
      */
-    public function getMessage()
+    public function getCardTokenKey()
     {
-        if (isset($this->data['result_text'])) {
-            return $this->data['result_text'];
+        if (isset($this->data['card_token_key'])) {
+            return $this->data['card_token_key'];
         }
     }
 
     /**
      * @return string|null
      */
-    public function getCode()
+    public function getLastFour()
     {
-        if (isset($this->data['result'])) {
-            return $this->data['result'];
+        if (isset($this->data['last4'])) {
+            return $this->data['last4'];
+        }
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getIsEligibleForDisbursement()
+    {
+        if (isset($this->data['is_eligible_for_disbursement'])) {
+            return $this->data['is_eligible_for_disbursement'];
         }
     }
 

@@ -23,20 +23,20 @@ class Gateway extends AbstractGateway
     public function getDefaultParameters()
     {
         return array(
-            'apiHostname' => '',
+            'hostname' => '',
             'username' => '',
-            'secureToken' => '',
+            'securetoken' => '',
         );
     }
 
-    public function getApiHostname()
+    public function getHostname()
     {
-        return $this->getParameter('apiHostname');
+        return $this->getParameter('hostname');
     }
 
-    public function setApiHostname($value)
+    public function setHostname($value)
     {
-        return $this->setParameter('apiHostname', $value);
+        return $this->setParameter('hostname', $value);
     }
 
     public function getUsername()
@@ -49,19 +49,45 @@ class Gateway extends AbstractGateway
         return $this->setParameter('username', $value);
     }
 
-    public function getSecureToken()
+    public function getSecuretoken()
     {
-        return $this->getParameter('secureToken');
+        return $this->getParameter('securetoken');
     }
 
-    public function setSecureToken($value)
+    public function setSecuretoken($value)
     {
-        return $this->setParameter('secureToken', $value);
+        return $this->setParameter('securetoken', $value);
     }
 
     public function purchase(array $parameters = array())
     {
-        return $this->createRequest('\Omnipay\Repay\Message\PurchaseRequest', $parameters);
+        return $this->createRequest('\Omnipay\Repay\Message\SaleRequest', $parameters);
     }
+
+    public function authorize(array $parameters = array())
+    {
+        return $this->createRequest('\Omnipay\Repay\Message\AuthorizeRequest', $parameters);
+    }
+
+    public function capture(array $parameters = array())
+    {
+        return $this->createRequest('\Omnipay\Repay\Message\CaptureRequest', $parameters);
+    }
+
+    public function refund(array $parameters = array())
+    {
+        return $this->createRequest('\Omnipay\Repay\Message\RefundRequest', $parameters);
+    }
+
+    public function reversal(array $parameters = array())
+    {
+        return $this->createRequest('\Omnipay\Repay\Message\ReversalRequest', $parameters);
+    }
+
+    public function checkout(array $parameters = array())
+    {
+        return $this->createRequest('\Omnipay\Repay\Message\CheckoutRequest', $parameters);
+    }
+
 
 }

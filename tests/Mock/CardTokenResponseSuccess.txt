@@ -1,0 +1,10 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+Date: Sat, 13 May 2017 00:20:08 GMT
+requestId: 3c644d2e-082c-430e-a209-fce4c253e49f
+Server: Windows NT 3.x
+X-Content-Type-Options: nosniff
+Content-Length: 760
+Connection: Close
+
+{"card_token_key":382767,"exp_date":"1222","name_on_card":"John Doe","street":"1234 Main Street","zip":"85281","last4":"0005","card_type":"VISA","is_eligible_for_disbursement":true}

@@ -5,7 +5,7 @@ namespace Omnipay\Repay\Message;
 /**
  * REPAY Purchase Request
  */
-class PurchaseRequest extends AbstractRequest
+class SaleRequest extends AbstractCardRequest
 {
     /**
      * @return string
@@ -16,19 +16,11 @@ class PurchaseRequest extends AbstractRequest
     }
 
     /**
-     * @param $value
+     * @return string
      */
-    public function setInvoiceId($value)
+    public function getResponseClassName()
     {
-        $this->setParameter('invoiceId', $value);
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getInvoiceId()
-    {
-        return $this->getParameter('invoiceId');
+        return '\Omnipay\Repay\Message\SaleResponse';
     }
 
     /**
@@ -39,6 +31,7 @@ class PurchaseRequest extends AbstractRequest
     public function getData()
     {
         $card = $this->getCard();
+        $card->validate();
 
         $data = [
             'amount' => $this->getAmount(),

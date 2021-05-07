@@ -1,26 +1,18 @@
 <?php
 
-namespace Omnipay\Repay\Message;
+namespace Omnipay\Repay\Message\Hosted;
 
 use Guzzle\Http\Message\Response as HttpResponse;
 use Omnipay\Common\Message\AbstractResponse;
 use Omnipay\Common\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
-/**
- * REPAY Purchase Request
- */
-class Response extends AbstractResponse
+class TokensResponse extends AbstractResponse
 {
     /**
      * @var HttpResponse  HTTP response object
      */
     public $response;
-
-    /**
-     * @var string  Payment status that determines success
-     */
-    protected $resultOk = '0';
 
     /**
      * Constructor
@@ -45,35 +37,16 @@ class Response extends AbstractResponse
     public function isSuccessful()
     {
         $code = $this->response->getStatusCode();
-        if ($code !== 200) {
-            return false;
-        }
-
-        if (isset($this->data['result']) && $this->data['result'] == $this->resultOk) {
-            return true;
-        }
-
-        return false;
+        return $code == 200;
     }
 
-    /**
-     * @return string|null
-     */
-    public function getMessage()
-    {
-        if (isset($this->data['result_text'])) {
-            return $this->data['result_text'];
-        }
-    }
 
-    /**
-     * @return string|null
-     */
-    public function getCode()
+    public function getTokens()
     {
-        if (isset($this->data['result'])) {
-            return $this->data['result'];
+        if (isset($this->data['vault_tokens'])) {
+            return $this->data['vault_tokens'];
         }
+        return [];
     }
 
 }

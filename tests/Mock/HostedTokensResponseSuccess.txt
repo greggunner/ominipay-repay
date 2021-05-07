@@ -1,0 +1,10 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+Date: Sat, 13 May 2017 00:20:08 GMT
+requestId: 3c644d2e-082c-430e-a209-fce4c253e49f
+Server: Windows NT 3.x
+X-Content-Type-Options: nosniff
+Content-Length: 760
+Connection: Close
+
+{"vault_tokens":[{"id":"76204d4b-bdab-4187-b371-7dd28fd9c5ee","payment_method":"card_token","token":"550826661","payment_method_detail":{"card_bin":"400758","card_brand":"VISA","gateway_mid":"536875367","card_last_four":"9904","card_expiration":"0124","cardholder_name":"John Smith"}}]}
