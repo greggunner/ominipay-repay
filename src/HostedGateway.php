@@ -13,7 +13,7 @@ use Omnipay\Repay\Message\Hosted\TokensRequest;
  * Repay Gateway
  *
  */
-class GatewayHosted extends AbstractGateway
+class HostedGateway extends AbstractGateway
 {
     public function getName()
     {

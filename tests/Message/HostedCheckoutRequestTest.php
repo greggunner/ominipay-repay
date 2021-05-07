@@ -2,7 +2,7 @@
 
 namespace Omnipay\Tests\Message;
 
-use Omnipay\Repay\GatewayHosted;
+use Omnipay\Repay\HostedGateway;
 use Omnipay\Repay\Message\Hosted\CheckoutResponse;
 use Omnipay\Tests\TestCase;
 
@@ -10,7 +10,7 @@ class HostedCheckoutRequestTest extends TestCase
 {
     public function setUp()
     {
-        $this->gateway = new GatewayHosted($this->getHttpClient(), $this->getHttpRequest());
+        $this->gateway = new HostedGateway($this->getHttpClient(), $this->getHttpRequest());
         $this->gateway->setHostname('https://okinus.sandbox.repay.io');
         $this->gateway->setSecuretoken('securetoken');
 

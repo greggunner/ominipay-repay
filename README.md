@@ -1,4 +1,4 @@
-# Omnipay: REPAY
+# Omnipay: Repay
 
 **REPAY driver for the Omnipay PHP payment processing library**
 
@@ -21,7 +21,8 @@ composer require league/omnipay greggunner/repay
 
 The following gateways are provided by this package:
 
-* REPAY
+* Repay
+* Repay_Hosted
 
 For general usage instructions, please see the main [Omnipay](https://github.com/greggunner/omnipay-repay) repository.
 
